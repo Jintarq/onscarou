@@ -24,8 +24,8 @@ Route::post("bus", [BusController::class, 'postBus']);
 
 Route::get("carpools/{id}", [CarpoolsController::class, 'getCarpoolsById']);
 Route::get("bus/{id}", [BusController::class, 'getBusById']);
-
-
+Route::get("carpools/{dest_dep}/{dest_arr}", [CarpoolsController::class, 'getCarpoolsByDests']);
+Route::get("carpools/{dest_dep}/{dest_arr}/{time_dep}/{time_arr}", [CarpoolsController::class, 'getCarpoolsByH']);
 
 Route::delete("carpools/{id}", [CarpoolsController::class, 'delCarpoolsById']);
 Route::delete("bus/{id}", [BusController::class, 'delBusById']);

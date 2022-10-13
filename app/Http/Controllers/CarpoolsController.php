@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Carpools;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CarpoolsController extends Controller
 {
@@ -28,11 +29,26 @@ class CarpoolsController extends Controller
             'user_id' => 'required',
             'dest_dep' => 'required',
             'dest_arr' => 'required',
-            'heure_dep' => 'required',
-            'heure_arr' => 'required',
+            'time_dep' => 'required',
+            'time_arr' => 'required',
             'price' => 'required'
         ]);
 
         return Carpools::create($request->all());
+    }
+
+    public function getCarpoolsByDests($dest_dep, $dest_arr)
+    {
+        $carpools = Carpools::where('dest_dep', '=', $dest_dep)->where('dest_arr', '=', $dest_arr)->get();
+        return $carpools;
+    }
+    public function getCarpoolsByH($dest_dep, $dest_arr, $time_dep, $time_arr)
+    {
+        $carpools = Carpools::where('dest_dep', '=', $dest_dep)
+            ->where('dest_arr', '=', $dest_arr)
+            ->where('heure_dep', '>=', $time_dep)
+            ->where('heure_arr', '>=', $time_arr)
+            ->get();
+        return $carpools;
     }
 }

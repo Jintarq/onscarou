@@ -27,11 +27,20 @@ class BusController extends Controller
             'user_id' => 'required',
             'dest_dep' => 'required|string',
             'dest_arr' => 'required|string',
-            'heure_dep' => 'required',
-            'heure_arr' => 'required',
+            'time_dep' => 'required',
+            'time_arr' => 'required',
             'price' => 'required'
         ]);
 
         return Bus::create($request->all());
+    }
+    public function getBusByH($dest_dep, $dest_arr, $time_dep, $time_arr)
+    {
+        $carpools = Bus::where('dest_dep', '=', $dest_dep)
+            ->where('dest_arr', '=', $dest_arr)
+            ->where('heure_dep', '>=', $time_dep)
+            ->where('heure_arr', '>=', $time_arr)
+            ->get();
+        return $carpools;
     }
 }
