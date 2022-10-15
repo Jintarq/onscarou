@@ -19,8 +19,8 @@ class CreateCarpoolsTable extends Migration
             $table->integer("user_id");
             $table->string("dest_dep");
             $table->string("dest_arr");
-            $table->date("time_dep");
-            $table->date("time_arr");
+            $table->dateTime("time_dep");
+            $table->dateTime("time_arr");
             $table->integer("price");
         });
     }

@@ -20,7 +20,10 @@ export const Navbar = () => {
                 <div>
                     <ul>
                         <li>
-                            <a href="">Rechercher</a>
+                            <div className="navbar-flex">
+                                <img src="./assets/img/search.png" />
+                                <a href="">Rechercher</a>
+                            </div>
                         </li>
                         <li>
                             <div className="navbar-flex">
@@ -30,7 +33,7 @@ export const Navbar = () => {
                         </li>
                         <li>
                             <a href="">
-                                <p>Profile</p>
+                                <img src="./assets/img/profile.png" />
                             </a>
                         </li>
                     </ul>

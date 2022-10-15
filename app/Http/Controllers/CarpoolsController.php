@@ -42,12 +42,13 @@ class CarpoolsController extends Controller
         $carpools = Carpools::where('dest_dep', '=', $dest_dep)->where('dest_arr', '=', $dest_arr)->get();
         return $carpools;
     }
-    public function getCarpoolsByH($dest_dep, $dest_arr, $time_dep, $time_arr)
+    public function getCarpoolsByH($dest_dep, $dest_arr, $time_dep)
     {
+        $time_dep = str_replace('_', ' ', $time_dep);
         $carpools = Carpools::where('dest_dep', '=', $dest_dep)
+            ->where('dest_dep', '=', $dest_dep)
             ->where('dest_arr', '=', $dest_arr)
-            ->where('heure_dep', '>=', $time_dep)
-            ->where('heure_arr', '>=', $time_arr)
+            ->where('time_dep', '>=', $time_dep)
             ->get();
         return $carpools;
     }

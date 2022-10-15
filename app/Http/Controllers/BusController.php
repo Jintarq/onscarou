@@ -34,13 +34,13 @@ class BusController extends Controller
 
         return Bus::create($request->all());
     }
-    public function getBusByH($dest_dep, $dest_arr, $time_dep, $time_arr)
+    public function getBusByH($dest_dep, $dest_arr, $time_dep)
     {
-        $carpools = Bus::where('dest_dep', '=', $dest_dep)
+        $time_dep = str_replace('_', ' ', $time_dep);
+        $bus = Bus::where('dest_dep', '=', $dest_dep)
             ->where('dest_arr', '=', $dest_arr)
             ->where('heure_dep', '>=', $time_dep)
-            ->where('heure_arr', '>=', $time_arr)
             ->get();
-        return $carpools;
+        return $bus;
     }
 }
