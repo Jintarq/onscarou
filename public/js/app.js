@@ -3221,67 +3221,9 @@ function createURL(location) {
 
 /***/ }),
 
-/***/ "./resources/js/Index.js":
-/*!*******************************!*\
-  !*** ./resources/js/Index.js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Index": () => (/* binding */ Index)
-/* harmony export */ });
-/* harmony import */ var _components_Warning__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Warning */ "./resources/js/components/Warning.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Navbar */ "./resources/js/components/Navbar.js");
-/* harmony import */ var _components_Pages_Homepage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Pages/Homepage */ "./resources/js/components/Pages/Homepage.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-
-var Index = function Index() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("header", {
-      className: "header",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Navbar__WEBPACK_IMPORTED_MODULE_2__.Navbar, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Warning__WEBPACK_IMPORTED_MODULE_0__.Warning, {})]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("main", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_Pages_Homepage__WEBPACK_IMPORTED_MODULE_3__.Homepage, {})
-    })]
-  });
-};
-
-/***/ }),
-
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var _Index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Index */ "./resources/js/Index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-var root = document.getElementById("root");
-react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.HashRouter, {
-  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Index__WEBPACK_IMPORTED_MODULE_2__.Index, {})
-}), root);
-
-/***/ }),
-
-/***/ "./resources/js/components/Navbar.js":
+/***/ "./resources/js/Components/Navbar.js":
 /*!*******************************************!*\
-  !*** ./resources/js/components/Navbar.js ***!
+  !*** ./resources/js/Components/Navbar.js ***!
   \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -3355,69 +3297,100 @@ var Navbar = function Navbar() {
 
 /***/ }),
 
-/***/ "./resources/js/components/Pages/Homepage.js":
-/*!***************************************************!*\
-  !*** ./resources/js/components/Pages/Homepage.js ***!
-  \***************************************************/
+/***/ "./resources/js/Components/SearchForm.js":
+/*!***********************************************!*\
+  !*** ./resources/js/Components/SearchForm.js ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Homepage": () => (/* binding */ Homepage)
+/* harmony export */   "SearchForm": () => (/* binding */ SearchForm)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
-var Homepage = function Homepage() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    className: "homepage",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-        src: "./assets/img/carpool-bus.svg",
-        className: "homepage-img",
-        alt: "Home page image presenting a bus and a car doing carpools"
+var SearchForm = function SearchForm(_ref) {
+  var setDestArr = _ref.setDestArr,
+      setDestDep = _ref.setDestDep,
+      setNbPpl = _ref.setNbPpl,
+      setCarpDate = _ref.setCarpDate,
+      setCarpools = _ref.setCarpools,
+      destArr = _ref.destArr,
+      destDep = _ref.destDep,
+      nbPpl = _ref.nbPpl,
+      carpDate = _ref.carpDate;
+
+  var handleSubmit = function handleSubmit(e) {
+    e.preventDefault();
+
+    /*#__PURE__*/
+    (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Navigate, {
+      to: "/"
+    });
+  };
+
+  var handleDestArr = function handleDestArr() {};
+
+  var handleDestDep = function handleDestDep() {};
+
+  var handleNbPpl = function handleNbPpl() {};
+
+  var handleDate = function handleDate() {};
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "form-section",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+      children: "Un vaste choix de trajets \xE0 petits prix"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+      className: "form-search-carpools",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        id: "dest_dep",
+        placeholder: "D\xE9part"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "text",
+        id: "dest_arr",
+        placeholder: "Destination",
+        defaultValue: destArr
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        type: "date",
+        onChange: function onChange(e) {
+          return handleDate(e);
+        },
+        id: "time_dep"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "form-section",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-          children: "Un vaste choix de trajets \xE0 petits prix"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
-          className: "form-search-carpools",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-            type: "text",
-            id: "dest_dep",
-            placeholder: "D\xE9part"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-            type: "text",
-            id: "dest_arr",
-            placeholder: "Destination"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-              type: "date",
-              id: "time_dep"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-            type: "number",
-            min: "1",
-            id: "nb_ppl",
-            defaultValue: "1"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-            id: "submit",
-            type: "submit"
-          })]
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: "./assets/img/customer.png",
+          alt: "Image that show a customer as the number of people for a carpool research"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+          type: "number",
+          min: "1",
+          id: "nb_ppl",
+          defaultValue: "1",
+          className: "nb-people"
         })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+        id: "submit",
+        type: "submit",
+        value: "Rechercher",
+        onSubmit: function onSubmit(e) {
+          return handleSubmit(e);
+        }
       })]
-    })
+    })]
   });
 };
 
 /***/ }),
 
-/***/ "./resources/js/components/Warning.js":
+/***/ "./resources/js/Components/Warning.js":
 /*!********************************************!*\
-  !*** ./resources/js/components/Warning.js ***!
+  !*** ./resources/js/Components/Warning.js ***!
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -3447,6 +3420,246 @@ var Warning = function Warning() {
     })]
   });
 };
+
+/***/ }),
+
+/***/ "./resources/js/Index.js":
+/*!*******************************!*\
+  !*** ./resources/js/Index.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Index": () => (/* binding */ Index)
+/* harmony export */ });
+/* harmony import */ var _Components_Warning__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Components/Warning */ "./resources/js/Components/Warning.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Components_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/Navbar */ "./resources/js/Components/Navbar.js");
+/* harmony import */ var _Pages_Homepage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Pages/Homepage */ "./resources/js/Pages/Homepage.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _Components_SearchForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Components/SearchForm */ "./resources/js/Components/SearchForm.js");
+/* harmony import */ var _Pages_ResearchCarpools__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Pages/ResearchCarpools */ "./resources/js/Pages/ResearchCarpools.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+var Index = function Index() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      destDep = _useState2[0],
+      setDestDep = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      destArr = _useState4[0],
+      setDestArr = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(1),
+      _useState6 = _slicedToArray(_useState5, 2),
+      nbPpl = _useState6[0],
+      setNbPpl = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(new Date()),
+      _useState8 = _slicedToArray(_useState7, 2),
+      carpDate = _useState8[0],
+      setCarpDate = _useState8[1];
+
+  var query = {
+    dest_dep: destDep,
+    dest_arr: destArr,
+    nb_people: nbPpl,
+    date: carpDate
+  };
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
+      _useState10 = _slicedToArray(_useState9, 2),
+      carpools = _useState10[0],
+      setCarpools = _useState10[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    console.log(query.dest_arr);
+  }, [destArr]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("header", {
+      className: "header",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Navbar__WEBPACK_IMPORTED_MODULE_2__.Navbar, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+          path: "/",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Components_Warning__WEBPACK_IMPORTED_MODULE_0__.Warning, {})
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("main", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+          path: "/",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Pages_Homepage__WEBPACK_IMPORTED_MODULE_3__.Homepage, {
+            setDestArr: setDestArr,
+            setDestDep: setDestDep,
+            setNbPpl: setNbPpl,
+            setCarpDate: setCarpDate,
+            setCarpools: setCarpools,
+            destArr: destArr,
+            destDep: destDep,
+            nbPpl: nbPpl,
+            carpDate: carpDate
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+          path: "/search",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Pages_ResearchCarpools__WEBPACK_IMPORTED_MODULE_5__.ResearchCarpools, {
+            setDestArr: setDestArr,
+            setDestDep: setDestDep,
+            setNbPpl: setNbPpl,
+            setCarpDate: setCarpDate,
+            setCarpools: setCarpools,
+            destArr: destArr,
+            destDep: destDep,
+            nbPpl: nbPpl,
+            carpDate: carpDate
+          })
+        })]
+      })
+    })]
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Homepage.js":
+/*!****************************************!*\
+  !*** ./resources/js/Pages/Homepage.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Homepage": () => (/* binding */ Homepage)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Components_SearchForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Components/SearchForm */ "./resources/js/Components/SearchForm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var Homepage = function Homepage(_ref) {
+  var setDestArr = _ref.setDestArr,
+      setDestDep = _ref.setDestDep,
+      setNbPpl = _ref.setNbPpl,
+      setCarpDate = _ref.setCarpDate,
+      setCarpools = _ref.setCarpools,
+      destArr = _ref.destArr,
+      destDep = _ref.destDep,
+      nbPpl = _ref.nbPpl,
+      carpDate = _ref.carpDate;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    className: "homepage",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+        src: "./assets/img/carpool-bus.svg",
+        className: "homepage-img",
+        alt: "Home page image presenting a bus and a car doing carpools"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Components_SearchForm__WEBPACK_IMPORTED_MODULE_1__.SearchForm, {
+        setDestArr: setDestArr,
+        setDestDep: setDestDep,
+        setNbPpl: setNbPpl,
+        setCarpDate: setCarpDate,
+        setCarpools: setCarpools,
+        destArr: destArr,
+        destDep: destDep,
+        nbPpl: nbPpl,
+        carpDate: carpDate
+      })]
+    })
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/Pages/ResearchCarpools.js":
+/*!************************************************!*\
+  !*** ./resources/js/Pages/ResearchCarpools.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ResearchCarpools": () => (/* binding */ ResearchCarpools)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Components_SearchForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Components/SearchForm */ "./resources/js/Components/SearchForm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var ResearchCarpools = function ResearchCarpools(_ref) {
+  var setDestArr = _ref.setDestArr,
+      setDestDep = _ref.setDestDep,
+      setNbPpl = _ref.setNbPpl,
+      setCarpDate = _ref.setCarpDate,
+      setCarpools = _ref.setCarpools,
+      destArr = _ref.destArr,
+      destDep = _ref.destDep,
+      nbPpl = _ref.nbPpl,
+      carpDate = _ref.carpDate;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Components_SearchForm__WEBPACK_IMPORTED_MODULE_1__.SearchForm, {
+      setDestArr: setDestArr,
+      setDestDep: setDestDep,
+      setNbPpl: setNbPpl,
+      setCarpDate: setCarpDate,
+      setCarpools: setCarpools,
+      destArr: destArr,
+      destDep: destDep,
+      nbPpl: nbPpl,
+      carpDate: carpDate
+    })
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/app.js":
+/*!*****************************!*\
+  !*** ./resources/js/app.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var _Index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Index */ "./resources/js/Index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var root = document.getElementById("root");
+react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.HashRouter, {
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Index__WEBPACK_IMPORTED_MODULE_2__.Index, {})
+}), root);
 
 /***/ }),
 

@@ -94,7 +94,7 @@ a {
     position: absolute;
 }
 
-.homepage div .form-section {
+div .form-section {
     position: relative;
     width: 100%;
     height: 100%;
@@ -106,18 +106,20 @@ a {
     bottom: 40px;
 }
 
-.homepage .form-section h2 {
+.form-section h2 {
     font-size: 60px;
-    color: white;
     max-width: 900px;
     text-align: center;
+}
+.homepage .form-section h2 {
+    color: white;
 }
 .homepage,
 .homepage > div {
     width: 100%;
     height: 100%;
 }
-.homepage .form-section .form-search-carpools {
+.form-section .form-search-carpools {
     width: 100%;
     height: 100%;
     display: flex;
@@ -125,19 +127,55 @@ a {
     justify-content: center;
     padding-top: 175px;
 }
-.homepage .form-section .form-search-carpools input {
+.form-section .form-search-carpools input {
     border: none;
     padding: 18px;
     font-size: 18px;
 }
-.homepage .form-section .form-search-carpools > input:nth-child(1) {
+.form-section .form-search-carpools > input:nth-child(1) {
     border-radius: 15px 0 0 15px;
 }
 
-.homepage .form-section .form-search-carpools > input:last-child {
+.form-section .form-search-carpools > input:last-child {
     border-radius: 0 15px 15px 0;
 }
 
-.form-search-carpools input[type="number"] {
+.form-section .form-search-carpools input[type="number"] {
     width: 80px;
+}
+
+.form-section .form-search-carpools input[type="submit"] {
+    background-color: #00aff5;
+    color: white;
+    font-weight: 600;
+}
+.form-section .form-search-carpools div {
+    min-width: 120px;
+    max-height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+.form-section .form-search-carpools div input {
+    width: 100%;
+    height: 100%;
+    margin-left: 28px;
+}
+.form-section .form-search-carpools div img {
+    width: 24px;
+    position: absolute;
+    left: 10px;
+}
+.form-search-carpools input:focus {
+    outline: none;
+}
+
+.research-carpools .form-section form > input,
+.research-carpools .form-section form > div {
+    border: solid 1px black;
+}
+
+.research-carpools .form-section .form-search-carpools > input:last-child {
+    border: solid 1px #00aff5;
 }
