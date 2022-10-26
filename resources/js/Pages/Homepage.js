@@ -10,6 +10,7 @@ export const Homepage = (props) => {
                     className="homepage-img"
                     alt="Home page image representing a bus and a car doing carpools"
                 />
+
                 <SearchForm {...props} />
             </div>
         </div>

@@ -11,16 +11,7 @@ export const Index = () => {
     const [destArr, setDestArr] = useState("");
     const [nbPpl, setNbPpl] = useState(1);
     const [carpDate, setCarpDate] = useState(new Date());
-    const query = {
-        dest_dep: destDep,
-        dest_arr: destArr,
-        nb_people: nbPpl,
-        date: carpDate,
-    };
     const [carpools, setCarpools] = useState([]);
-    useEffect(() => {
-        console.log(query.dest_arr);
-    }, [destArr]);
     return (
         <div>
             <header className="header">
@@ -44,6 +35,7 @@ export const Index = () => {
                                 destDep={destDep}
                                 nbPpl={nbPpl}
                                 carpDate={carpDate}
+                                carpools={carpools}
                             />
                         }
                     />

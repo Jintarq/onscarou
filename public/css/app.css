@@ -73,7 +73,7 @@ a {
 .navbar-nav-links div ul li {
     margin-left: 50px;
 }
-.navbar-nav-links div ul li h1 {
+.navbar-nav-links div ul li a h1 {
     color: #054752;
 }
 .navbar-flex {
@@ -91,7 +91,7 @@ a {
     width: 100%;
     height: 450px;
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     position: absolute;
 }
 
@@ -126,7 +126,7 @@ a {
     justify-content: center;
     padding-top: 175px;
 }
-.homepage .form-section .form-search-carpools input {
+.form-section .form-search-carpools input {
     border: none;
     padding: 18px;
     font-size: 18px;
@@ -168,4 +168,3 @@ a {
 .form-search-carpools input:focus {
     outline: none;
 }
-

@@ -1,5 +1,6 @@
-import React from "react";
-import { SearchForm } from "../Components/SearchForm";
+import React, { useState } from "react";
+import { Carpool } from "../Components/Carpool";
+import { FormS } from "../Components/FormS";
 
 export const ResearchCarpools = ({
     setDestArr,
@@ -11,10 +12,11 @@ export const ResearchCarpools = ({
     destDep,
     nbPpl,
     carpDate,
+    carpools,
 }) => {
     return (
         <div className="research-carpools">
-            <SearchForm
+            <FormS
                 setDestArr={setDestArr}
                 setDestDep={setDestDep}
                 setNbPpl={setNbPpl}
@@ -24,7 +26,11 @@ export const ResearchCarpools = ({
                 destDep={destDep}
                 nbPpl={nbPpl}
                 carpDate={carpDate}
+                carpools={carpools}
             />
+            {carpools.map((carpool) => {
+                return <Carpool carpool={carpool} key={carpool.id} />;
+            })}
         </div>
     );
 };

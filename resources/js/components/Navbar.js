@@ -7,7 +7,9 @@ export const Navbar = () => {
                 <div>
                     <ul>
                         <li>
-                            <h1>OnS'CarOù</h1>
+                            <a href="/">
+                                <h1>OnS'CarOù</h1>
+                            </a>
                         </li>
                         <li>
                             <a href="">Covoiturage</a>
