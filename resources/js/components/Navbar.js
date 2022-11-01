@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Navbar = () => {
+export const Navbar = ({ isLoggedIn }) => {
     return (
         <div className="navbar-component">
             <div className="navbar-nav-links">
@@ -34,7 +34,7 @@ export const Navbar = () => {
                             </div>
                         </li>
                         <li>
-                            <a href="">
+                            <a href={isLoggedIn ? "/#/profile" : "/#/login"}>
                                 <img src="./assets/img/profile.png" />
                             </a>
                         </li>

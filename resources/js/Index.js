@@ -4,18 +4,37 @@ import { Navbar } from "./Components/Navbar";
 import { Homepage } from "./Pages/Homepage";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { SearchForm } from "./Components/SearchForm";
 import { ResearchCarpools } from "./Pages/ResearchCarpools";
+import { ProtectedRoute } from "./Components/ProtectedRoute";
+import { Profile } from "./Pages/Profile";
+import { Login } from "./Auth/Login";
 export const Index = () => {
     const [destDep, setDestDep] = useState("");
     const [destArr, setDestArr] = useState("");
     const [nbPpl, setNbPpl] = useState(1);
     const [carpDate, setCarpDate] = useState(new Date());
     const [carpools, setCarpools] = useState([]);
+    const [user, setUser] = useState(
+        JSON.parse(localStorage.getItem("user")) || null
+    );
+    const [isLoggedIn, setIsLoggedIn] = useState(
+        JSON.parse(localStorage.getItem("isLoggedIn")) || false
+    );
+
+    useEffect(() => {
+        localStorage.setItem("user", JSON.stringify(user));
+    }, [user]);
+    useEffect(() => {
+        localStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
+    }, [isLoggedIn]);
+    useEffect(() => {
+        console.log(user);
+        console.log(isLoggedIn);
+    }, []);
     return (
-        <div>
+        <div className="index">
             <header className="header">
-                <Navbar />
+                <Navbar isLoggedIn={isLoggedIn} />
                 <Routes>
                     <Route path="/" element={<Warning />} />
                 </Routes>
@@ -54,6 +73,24 @@ export const Index = () => {
                                 carpDate={carpDate}
                                 carpools={carpools}
                             />
+                        }
+                    />
+                    <Route
+                        path="/login"
+                        element={
+                            <Login
+                                setUser={setUser}
+                                setIsLoggedIn={setIsLoggedIn}
+                                user={user}
+                            />
+                        }
+                    />
+                    <Route
+                        path="/profile"
+                        element={
+                            <ProtectedRoute isLoggedIn={isLoggedIn}>
+                                <Profile user={user} />
+                            </ProtectedRoute>
                         }
                     />
                 </Routes>

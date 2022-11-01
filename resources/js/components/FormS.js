@@ -9,7 +9,6 @@ export const FormS = ({
     setCarpools,
     destArr,
     destDep,
-    nbPpl,
     carpDate,
 }) => {
     const navigate = useNavigate();

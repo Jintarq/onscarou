@@ -42,7 +42,7 @@ class AuthController extends Controller
         ]);
         $user = User::where('email', '=', $user_fields["email"])->first();
 
-        if (!$user || Hash::check($user_fields["password"], $user->password)) {
+        if (!$user || !Hash::check($user_fields["password"], $user->password)) {
             return [
                 "message" => "Error, mail or password doesn't match"
             ];

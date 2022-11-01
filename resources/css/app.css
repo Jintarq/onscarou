@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.index {
+    width: 100vw;
+    height: 100vh;
+}
 ul {
     list-style-type: none;
 }
@@ -182,4 +186,53 @@ div .form-section {
 
 .research-carpools .form-search-carpools {
     padding-top: 45px;
+}
+
+/* Login form */
+
+.login-form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs-login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+.inputs-login-form a {
+    padding: 35px 0;
+    font-size: 20px;
+    color: rgb(0, 175, 245);
+    font-weight: 600;
+}
+.inputs-login-form .fields-login {
+    height: 55px;
+    width: 600px;
+    padding: 15px;
+    font-size: 1rem;
+    margin: 10px 0;
+    border: none;
+    background-color: rgb(237, 237, 237);
+    border-radius: 15px;
+}
+
+.inputs-login-form .submit-login {
+    border: none;
+    background: rgb(0, 175, 245);
+    height: 45px;
+    width: 120px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    border-radius: 25px;
+}
+.error {
+    margin: 25px;
+    color: red;
 }
