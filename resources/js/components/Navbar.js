@@ -30,7 +30,7 @@ export const Navbar = ({ isLoggedIn }) => {
                         <li>
                             <div className="navbar-flex">
                                 <img src="./assets/img/plus.svg" />
-                                <a href="">Publier un trajet</a>
+                                <a href="/#/addcarpool">Publier un trajet</a>
                             </div>
                         </li>
                         <li>

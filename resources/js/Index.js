@@ -8,6 +8,7 @@ import { ResearchCarpools } from "./Pages/ResearchCarpools";
 import { ProtectedRoute } from "./Components/ProtectedRoute";
 import { Profile } from "./Pages/Profile";
 import { Login } from "./Auth/Login";
+import { AddCarpool } from "./Components/AddCarpool";
 export const Index = () => {
     const [destDep, setDestDep] = useState("");
     const [destArr, setDestArr] = useState("");
@@ -90,6 +91,14 @@ export const Index = () => {
                         element={
                             <ProtectedRoute isLoggedIn={isLoggedIn}>
                                 <Profile user={user} />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="/addcarpool"
+                        element={
+                            <ProtectedRoute isLoggedIn={isLoggedIn}>
+                                <AddCarpool user={user} />
                             </ProtectedRoute>
                         }
                     />

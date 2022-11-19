@@ -31,7 +31,8 @@ class CarpoolsController extends Controller
             'dest_arr' => 'required',
             'time_dep' => 'required',
             'time_arr' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'passengers' => 'required'
         ]);
 
         return Carpools::create($request->all());
